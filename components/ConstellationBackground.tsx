@@ -34,7 +34,7 @@ export default function ConstellationBackground() {
         />
       ))}
       {DOTS.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r={i % 5 === 0 ? 2.2 : 1.4} fill="#ffffff" />
+        <circle key={i} cx={x} cy={y} r={i % 5 === 0 ? 2.2 : 1.4} fill="var(--color-ink)" />
       ))}
     </svg>
   );

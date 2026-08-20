@@ -49,7 +49,7 @@ export const socialItems: SocialItem[] = [
   },
   {
     label: "GitHub",
-    href: "https://github.com/zohaibmustafa298",
+    href: "https://github.com/zohaib298",
     icon: SiGithub,
     external: true,
   },
@@ -60,3 +60,37 @@ export const socialItems: SocialItem[] = [
     external: true,
   },
 ];
+
+export type Project = {
+  /** URL-safe identifier — used for the /projects/[slug] route. */
+  slug: string;
+  title: string;
+  /** One-line summary shown on the card. */
+  summary: string;
+  /** What problem this project solves. */
+  problem: string;
+  /** What you actually built. */
+  built: string;
+  /** Your role on the project (e.g. "Solo full-stack developer"). */
+  role: string;
+  stack: string[];
+  liveUrl?: string;
+  repoUrl?: string;
+  /** Path under /public, e.g. "/projects/my-project.jpg". */
+  thumbnail: string;
+};
+
+// TODO: Add your real projects here as they're finished. Example shape:
+// {
+//   slug: "example-project",
+//   title: "Example Project",
+//   summary: "One-line summary of what this project does.",
+//   problem: "TODO: what problem did this solve?",
+//   built: "TODO: what did you build, concretely?",
+//   role: "TODO: your role, e.g. Solo full-stack developer",
+//   stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+//   liveUrl: "https://example.com",
+//   repoUrl: "https://github.com/zohaibmustafa298/example",
+//   thumbnail: "/projects/example-project.jpg",
+// },
+export const projects: Project[] = [];

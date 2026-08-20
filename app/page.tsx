@@ -14,7 +14,7 @@ export default function Home() {
 
       <Dock />
 
-      <main className="pb-24 md:pb-0">
+      <main>
         <Hero />
         <About />
         <Skills />

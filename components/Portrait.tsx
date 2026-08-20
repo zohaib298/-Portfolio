@@ -56,7 +56,7 @@ export default function Portrait() {
         animate="visible"
         variants={glowVariants}
         transition={{ delay: reduced ? 0 : DURATION.slow * 0.7, ease: EASE }}
-        className="motion-fallback pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-accent/30 shadow-[0_0_40px_rgba(232,67,43,0.25)] transition-shadow duration-300 group-hover:shadow-[0_0_55px_rgba(232,67,43,0.4)] group-hover:ring-accent/60"
+        className="motion-fallback pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-accent/30 shadow-glow-md transition-shadow duration-300 group-hover:shadow-glow-lg group-hover:ring-accent/60"
       />
     </motion.div>
   );

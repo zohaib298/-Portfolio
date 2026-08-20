@@ -1,11 +1,64 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base: #0a0a12;
-  --color-surface: #12121c;
-  --color-accent: #e8432b;
-  --color-muted: #9ca3af;
+  /* Colors — each aliases a runtime custom property (see :root / .dark below)
+     so next-themes can repaint the whole palette by toggling one class. */
+  --color-base: var(--base);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-muted: var(--muted);
+  /* Primary foreground — white text on dark, near-black on light. */
+  --color-ink: var(--ink);
+  /* Hairline borders/dividers/subtle fills — was `white/5`, now theme-aware. */
+  --color-line: var(--line);
+  /* Slightly stronger hairline for inputs/interactive borders — was `white/10`. */
+  --color-line-strong: var(--line-strong);
+
+  /* Fonts */
   --font-sora: var(--font-sora);
+  --font-inter: var(--font-inter);
+
+  /* Type scale: display sizes for the hero headline (paired line-heights) */
+  --text-display-sm: 2rem;
+  --text-display-sm--line-height: 1.1;
+  --text-display-md: 3rem;
+  --text-display-md--line-height: 1.1;
+  --text-display-lg: 3.75rem;
+  --text-display-lg--line-height: 1.1;
+
+  /* Accent glow shadows — shared tiers instead of one-off rgba strings */
+  --shadow-glow-sm: 0 0 16px rgba(232, 67, 43, 0.35);
+  --shadow-glow-md: 0 0 32px rgba(232, 67, 43, 0.3);
+  --shadow-glow-lg: 0 0 48px rgba(232, 67, 43, 0.45);
+  /* Neutral elevation shadow (dock, floating surfaces) — not accent-tinted */
+  --shadow-elevated: 0 0 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Runtime palette — dark is the default (matches the site's original look and
+   renders correctly even before next-themes' inline script runs). Toggling
+   `.light` on <html> repaints every `--color-*` alias above in one step. */
+:root {
+  --base: #0a0a12;
+  --surface: #12121c;
+  --accent: #e8432b;
+  --accent-strong: #c83723;
+  --muted: #9ca3af;
+  --ink: #ffffff;
+  --line: rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(255, 255, 255, 0.1);
+}
+
+:root.light {
+  --base: #f6f5f3;
+  --surface: #ffffff;
+  --accent: #e8432b;
+  --accent-strong: #c83723;
+  /* #57606a on white ≈ 4.6:1 — keeps muted copy at AA for normal text. */
+  --muted: #57606a;
+  --ink: #0f1115;
+  --line: rgba(15, 17, 21, 0.08);
+  --line-strong: rgba(15, 17, 21, 0.14);
 }
 
 html {
@@ -14,18 +67,53 @@ html {
 
 body {
   background: var(--color-base);
-  color: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Defensive guard: no single element should ever be able to introduce
+     page-level horizontal scroll (decorative glows, radar art, etc. are
+     already contained per-section, this is the last line of defense). */
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
   font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
 }
 
-@keyframes spin-slow {
-  to {
-    transform: rotate(360deg);
-  }
+/* Themed scrollbar */
+html {
+  scrollbar-color: var(--color-accent) var(--color-base);
+  scrollbar-width: thin;
 }
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-surface);
+  border-radius: 9999px;
+  border: 2px solid var(--color-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
+
+/* Accent selection color */
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
 }
 
 @keyframes pulse-glow {
@@ -40,4 +128,22 @@ body {
 
 .animate-pulse-glow {
   animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* View transitions: project card → detail page thumbnail morph. */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(*) {
+  animation-duration: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }

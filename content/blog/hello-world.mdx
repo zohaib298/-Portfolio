@@ -1,0 +1,38 @@
+export const metadata = {
+  title: "Hello, world",
+  date: "2026-08-20",
+  summary: "A first post to prove the blog pipeline works end-to-end — MDX, syntax highlighting, and reading time included.",
+  tags: ["meta"],
+};
+
+{/* TODO: Replace this with a real first post — a build log, a write-up of one of
+    your projects, or notes on something you learned. This file exists to prove
+    the MDX pipeline (frontmatter via `metadata`, code highlighting, GFM tables,
+    reading time) renders correctly end-to-end. */}
+
+This is the first post on the blog. It's written in [MDX](https://mdxjs.com), so it can mix regular Markdown with React components when needed.
+
+## What this proves
+
+- Per-post metadata (title, date, summary, tags) exported straight from the file
+- Syntax highlighting via `rehype-pretty-code` + Shiki
+- GitHub-flavored Markdown, including tables, via `remark-gfm`
+- Reading time computed from the raw file at build time
+
+## A code sample
+
+```ts
+export function greet(name: string) {
+  return `Hello, ${name}!`;
+}
+```
+
+## A table
+
+| Feature | Status |
+| --- | --- |
+| Frontmatter | Done |
+| Syntax highlighting | Done |
+| RSS feed | Done |
+
+> Swap this post out once you've got something real to say.

@@ -18,8 +18,10 @@ export default function Hero() {
         <ConstellationBackground />
       </div>
 
-      {/* Top-right social icons */}
-      <SocialRow className="absolute right-6 top-8 z-20 hidden sm:flex md:right-24" />
+      {/* Top-right social icons — sits below the fixed Header's ~88px band
+          (py-6 padding + h-10 controls) so it never overlaps the header's
+          own right-side controls (search trigger, theme toggle). */}
+      <SocialRow className="absolute right-6 top-28 z-20 hidden sm:flex md:right-12 lg:right-20" />
 
       {/* On-load entrance: eyebrow, headline, intro, badge row, then photo — in sequence */}
       <StaggerGroup
@@ -36,7 +38,7 @@ export default function Hero() {
           </StaggerItem>
 
           <StaggerItem>
-            <h1 className="text-[32px] leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="text-display-sm font-bold tracking-tight text-ink sm:text-display-md md:text-display-lg">
               Transforming <span className="text-accent">Ideas</span> Into
               <br />
               <span className="text-accent">Digital Reality</span>
@@ -62,7 +64,7 @@ export default function Hero() {
 
         {/* Right: profile photo, side-by-side on desktop, stacked + centered on mobile */}
         <StaggerItem className="relative flex justify-center pb-16 lg:justify-end lg:pb-32">
-          <div className="relative w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px]">
+          <div className="relative w-65 sm:w-75 md:w-85 lg:w-95">
             {/* ambient radial glow behind photo — soft falloff, not a hard shape */}
             <div className="absolute inset-x-0 top-10 -z-10 mx-auto h-96 w-96 bg-[radial-gradient(circle,rgba(232,67,43,0.2)_0%,rgba(232,67,43,0)_70%)] animate-pulse-glow" />
             {/* radar line-art behind photo */}
