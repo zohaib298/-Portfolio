@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Zohaib Mustafa — Full Stack Web Developer";
+export const alt = "Zohaib Mustafa — AI Automation & Software Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default function Image() {
             marginBottom: 24,
           }}
         >
-          Full Stack Web Developer
+          AI Automation & Software Developer
         </div>
         <div style={{ display: "flex", fontSize: 88, fontWeight: 700, color: "#ffffff" }}>
           Zohaib

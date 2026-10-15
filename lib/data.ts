@@ -1,13 +1,17 @@
 import type { ComponentType } from "react";
 import { Mail } from "lucide-react";
 import {
-  SiHtml5,
-  SiCss,
+  SiN8N,
+  SiAnthropic,
+  SiLaravel,
+  SiPhp,
+  SiMysql,
   SiJavascript,
+  SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiLaravel,
   SiNodedotjs,
+  SiGooglechrome,
   SiTailwindcss,
   SiGit,
   SiGithub,
@@ -22,13 +26,17 @@ export type Skill = {
 };
 
 export const skills: Skill[] = [
-  { label: "HTML", icon: SiHtml5 },
-  { label: "CSS", icon: SiCss },
+  { label: "n8n", icon: SiN8N },
+  { label: "AI agents", icon: SiAnthropic },
+  { label: "Laravel", icon: SiLaravel },
+  { label: "PHP", icon: SiPhp },
+  { label: "MySQL", icon: SiMysql },
   { label: "JavaScript", icon: SiJavascript },
+  { label: "TypeScript", icon: SiTypescript },
   { label: "React", icon: SiReact },
   { label: "Next.js", icon: SiNextdotjs },
-  { label: "Laravel", icon: SiLaravel },
   { label: "Node.js", icon: SiNodedotjs },
+  { label: "Chrome extensions", icon: SiGooglechrome },
   { label: "Tailwind CSS", icon: SiTailwindcss },
   { label: "Git", icon: SiGit },
 ];

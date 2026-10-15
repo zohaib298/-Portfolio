@@ -10,12 +10,13 @@ export default function About() {
         <div className="mt-8 flex flex-col gap-8">
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">Bio</h3>
-            {/* TODO: Rewrite this in your own words — background, what you do, what drives you. */}
             <p className="mt-2 max-w-prose text-base leading-relaxed text-muted">
-              I&apos;m a full stack web developer who enjoys building complete
-              products end-to-end — from designing the API and data layer to
-              shipping a clean, responsive interface on top of it. I care about
-              writing code that&apos;s simple to read and easy to maintain.
+              I build and run a production ERP for a fire safety trading
+              business, and the automations around it — n8n workflows and AI
+              agents that take over the repetitive work. Alongside that I build
+              websites and Chrome extensions. Because I handle operations in the
+              same business, I see where the real friction is before I write
+              anything.
             </p>
           </div>
 
@@ -23,10 +24,10 @@ export default function About() {
             <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">
               Currently working on
             </h3>
-            {/* TODO: Replace with what you're actually building right now. */}
             <p className="mt-2 max-w-prose text-base leading-relaxed text-muted">
-              Sharpening my full-stack skills by shipping real projects
-              end-to-end, from data modeling to deployment.
+              Extending Auto Quote, the engine that turns a raw customer inquiry
+              into a finished quotation, and adding AI agents to the ERP that
+              handle email and inventory without anyone touching them.
             </p>
           </div>
 
@@ -34,10 +35,10 @@ export default function About() {
             <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">
               What I&apos;m looking for
             </h3>
-            {/* TODO: Replace with the kind of role/work/collaboration you actually want. */}
             <p className="mt-2 max-w-prose text-base leading-relaxed text-muted">
-              Opportunities to work on products where I can own a feature
-              end-to-end and grow alongside a team that cares about craft.
+              A developer or automation role in Rawalpindi or Islamabad where I
+              can own real problems end to end — ideally somewhere that wants
+              manual processes turned into working software.
             </p>
           </div>
         </div>

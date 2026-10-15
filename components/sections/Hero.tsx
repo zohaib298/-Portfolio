@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-col gap-6 pb-16 lg:pb-32">
           <StaggerItem>
             <p className="text-xs uppercase tracking-[0.35em] text-muted">
-              Full Stack Web Developer
+              AI Automation &amp; Software Developer
             </p>
           </StaggerItem>
 
@@ -47,10 +47,10 @@ export default function Hero() {
 
           <StaggerItem>
             <p className="max-w-md text-base leading-relaxed text-muted">
-              I build fast, reliable, end-to-end web applications, from
-              database and API design to polished, high-craft frontends. Swap
-              this in with a short line about your focus, experience, and
-              what you love to build.
+              I build the software a business actually runs on — ERP systems,
+              AI automations, websites and browser extensions. I also run the
+              operations my software serves, so the requirements come from real
+              use rather than guesswork.
             </p>
           </StaggerItem>
 

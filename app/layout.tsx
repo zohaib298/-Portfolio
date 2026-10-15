@@ -23,17 +23,17 @@ const inter = Inter({
 const SITE_URL = "https://zohaibmustafa.dev";
 const SITE_NAME = "Zohaib Mustafa";
 const SITE_DESCRIPTION =
-  "Full Stack Web Developer — transforming ideas into digital reality.";
+  "AI automation, ERP and web development — software a business actually runs on.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Full Stack Web Developer`,
+    default: `${SITE_NAME} — AI Automation & Software Developer`,
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   openGraph: {
-    title: `${SITE_NAME} — Full Stack Web Developer`,
+    title: `${SITE_NAME} — AI Automation & Software Developer`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Full Stack Web Developer`,
+    title: `${SITE_NAME} — AI Automation & Software Developer`,
     description: SITE_DESCRIPTION,
   },
   alternates: {
@@ -53,7 +53,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: SITE_NAME,
-  jobTitle: "Full Stack Web Developer",
+  jobTitle: "AI Automation & Software Developer",
   url: SITE_URL,
   email: "mailto:zohaibmustafa200@gmail.com",
   sameAs: socialItems.filter((item) => item.external).map((item) => item.href),
